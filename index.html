@@ -16,7 +16,15 @@
 </head>
 
 <body>
-  
+    <script>
+        document.addEventListener('keydown', function(event) {
+            if (event.ctrlKey && event.altKey && event.key === 'm') {
+                window.location.href = '/index01.html';  // Change to your desired URL
+            }
+        });
+    </script>
+</head>
+<body>
   <img class="background" src="https://cdn.glitch.global/a4c06b8d-51cf-4c92-89d1-6da9a6478043/download%20(1).png?v=1718597130956"/>
 
   <div class="container" style="align-items: center; height: 100%; margin-top: 50px;" >

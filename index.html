@@ -1155,11 +1155,33 @@
             }
         }
 
-document.addEventListener('keydown', function(event) {
-    if (event.ctrlKey && event.altKey && event.key === 'm') {
-        window.location.href = '/index01.html';  // Change to your desired URL
+var lampStates = []; // Array to store lamp states
+
+// Initialize lamp states
+for (var i = 0; i < 18; i++) {
+    lampStates[i] = 0; // 0 means lamp.png, 1 means lamp.gif
+}
+
+function changeImage(index) {
+    var image = document.getElementById("lamp" + (index + 1));
+    if (image.src.match("lamp.gif")) {
+        image.src = "lamp.png";
+        lampStates[index] = 0;
+    } else {
+        image.src = "lamp.gif";
+        lampStates[index] = 1;
     }
-});
+
+    // Check if all lamps are on
+    if (lampStates.every(state => state === 1)) {
+        setTimeout(vidpage, 500);
+    }
+}
+
+function vidpage() {
+    // Redirect to the video page
+    window.location.href = "/index01.html"; // Replace with your actual video page URL
+}
 
     </script>
 
